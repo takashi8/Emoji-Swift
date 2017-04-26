@@ -17,8 +17,8 @@ extension String {
         }
     }
 
-    fileprivate static var emojiUnescapeRegExp = createEmojiUnescapeRegExp()
-    fileprivate static var emojiEscapeRegExp = createEmojiEscapeRegExp()
+    fileprivate static var emojiUnescapeRegExp: NSRegularExpression = createEmojiUnescapeRegExp()
+    fileprivate static var emojiEscapeRegExp: NSRegularExpression = createEmojiEscapeRegExp()
 
     fileprivate static func createEmojiUnescapeRegExp() -> NSRegularExpression {
         return try! NSRegularExpression(pattern: emojiDictionary.keys.map { ":\($0):" } .joined(separator: "|"), options: [])
